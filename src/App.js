@@ -1,14 +1,16 @@
 import "./App.css";
+import Counter from "./components/counter";
 import Post from "./components/post";
 
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "react-query";
+
+import client from "./client";
 
 function App() {
-  const queryClient = new QueryClient();
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={client}>
       <Post></Post>
+      <Counter></Counter>
     </QueryClientProvider>
   );
 }
